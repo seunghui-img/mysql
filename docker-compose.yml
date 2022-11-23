@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  rasa-store:
+    image: mysql:8.0.31
+    container_name: mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=1234
+      - MYSQL_DATABASE=SH_TEST
+      - TZ=Asia/Seoul
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+      - ./config:/etc/mysql/conf.d
+      - ./data:/var/lib/mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
