@@ -1,3 +1,12 @@
-**/__*__/**
-**/.*/**
-**/*.md
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv
+
+# Git
+.git
+.gitignore
+*.md
